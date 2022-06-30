@@ -1,0 +1,50 @@
+
+<app-header> </app-header> 
+
+<form #myForm='ngForm' class="container mt-5 pt-5">
+    <h2 style="margin-bottom: 50px; margin-top: 5px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(2, 100, 107);"><b>Zakažite novu intervenciju:</b></h2>
+
+    <select #sel class="custom-select" (change)="selectItem(sel.value)">
+        <option *ngFor="let item of doktori" value="{{stringify(item)}}" >
+           {{item.id_doktora}}
+        </option>
+    </select>
+    <!--
+    <select class="form-select" aria-label="Default select example" [ngModel]="selectedDoktor" (ngModelChange)="onVehicleNumberChange($event)">
+        <option *ngFor="let doktor of doktori" [ngValue]="doktor"> {{doktor.id_doktora}} - Dr {{doktor.ime}} {{doktor.prezime}} </option>
+      </select>
+    -->
+    <div class="form-group">
+        <label for="ime">DOktor proba</label>
+        <input class="form-control"  type="text" name="ime" >
+    </div>
+    <div class="form-group">
+        <label for="ime">Ime pacijenta</label>
+        <input class="form-control"  type="text" name="ime" [(ngModel)]="zakazivanje.ime_pacijenta">
+    </div>
+    <div class="form-group">
+        <label for="prezime">Prezime pacijenta</label>
+        <input class="form-control"  type="text" name="prezime" [(ngModel)]="zakazivanje.prezime_pacijenta">
+    </div>
+    <div class="form-group">
+        <label for="intervencija">Naziv intervencije</label>
+        <input class="form-control"  type="text" name="intervencija" [(ngModel)]="zakazivanje.naziv">
+    </div>
+    <div class="form-group">
+        <label for="datum">Datum termina</label>
+        <input class="form-control"  type="text" name="datum" [(ngModel)]="zakazivanje.datum">
+    </div>
+    <div class="form-group">
+        <label for="vreme">Vreme termina</label>
+        <input class="form-control"  type="text" name="vreme" [(ngModel)]="zakazivanje.vreme">
+    </div>
+    <div class="form-group">
+        <label for="telefon">Kontakt telefon</label>
+        <input class="form-control"  type="text" name="telefon" [(ngModel)]="zakazivanje.telefon">
+    </div>
+    <div class="col button-holder d-flex justify-content-center align-items-center mt-4" style="margin-bottom: 100px;">
+        <button (click)="addZakazivanje(zakazivanje)" [routerLink]="['/svi-termini']" type="submit" name="submit" class="btn btn-outline-info">Dodaj</button>
+    </div>
+</form>
+
+<app-footer></app-footer>

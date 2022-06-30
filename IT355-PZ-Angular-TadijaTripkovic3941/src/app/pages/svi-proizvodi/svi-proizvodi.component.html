@@ -1,0 +1,25 @@
+
+<app-header> </app-header>
+
+<div class="container mt-5 pt-5" style="margin-bottom:10%">
+
+    <div class="mb-3" >
+        <h3>Pretraga</h3>
+        <input [(ngModel)]="unos" placeholder="Unesite pojam za pretragu" style="margin-bottom: 30px">
+    </div>
+
+    <div class="row">
+    <div class="card" style="width: 18rem;" *ngFor="let proizvod of proizvodi | filterNazivProizvoda: unos">
+        <div class="card-body">
+          <h5 class="card-title">{{proizvod.proizvodjac}} {{proizvod.naziv_proizvoda}}</h5>
+          <p class="card-text">{{proizvod.opis_proizvoda}}</p>
+          <p class="card-text">Cena - {{proizvod.cena_proizvoda}}RSD</p>
+          <button (click)="kupi(proizvod, user)" *ngIf="user.ime_korisnika" type="submit" name="submit" class="btn btn-outline-info">Kupi proizvod</button>
+        </div>
+      </div>
+    </div>
+
+    
+</div>
+<app-footer></app-footer>
+

@@ -1,0 +1,34 @@
+
+<form #myForm='ngForm' style="margin-left: 200px; margin-right: 200px; margin-bottom: 30px; margin-top: 50px;">
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(5, 126, 134);">Registrujte se: </h1>
+<br>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputIme">Ime</label>
+      <input type="text" class="form-control" name="inputIme" placeholder="Unesite Vaše ime" [(ngModel)]="user.ime_korisnika">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="inputPrezime">Prezime</label>
+        <input type="text" class="form-control" name="inputPrezime" placeholder="Unesite Vaše prezime" [(ngModel)]="user.prezime_korisnika">
+      </div>
+    </div>
+
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="username">Korisničko ime</label>
+        <input type="text" class="form-control" name="username" placeholder="Unesite korisničko ime" [(ngModel)]="user.username">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Lozinka</label>
+        <input type="password" class="form-control" name="inputPassword4" placeholder="Unesite lozinku" [(ngModel)]="user.password">
+      </div>
+    </div>
+    
+   
+    <button (click)="addUserr(user)" type="submit" class="btn btn-outline-info" [routerLink]="['/login']">Registruj se</button>
+  </form>

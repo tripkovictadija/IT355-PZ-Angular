@@ -1,0 +1,31 @@
+
+<app-header> </app-header>
+
+<div class="container mt-5 pt-5" style="margin-bottom:10%">
+    <h2 style="margin-bottom: 50px; margin-top: 5px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(2, 100, 107);"><b>Kreirane porudžbine</b></h2>
+    <br>
+    <br>
+    <table  class="table">
+        <thead>
+            <tr>
+                
+                <th scope="col">Podaci o korisniku(id)</th>
+                <th scope="col">Podaci o proizvodu(id)</th>
+                
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let kupovina of proizvodi ">
+                <td>
+                    {{user.id_korisnika}}
+                </td>
+                <td>
+                    {{kupovina.id_proizvoda}}
+                </td>
+               
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-footer></app-footer>
+

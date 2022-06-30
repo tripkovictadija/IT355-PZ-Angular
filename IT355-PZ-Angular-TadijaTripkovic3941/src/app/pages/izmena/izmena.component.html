@@ -1,0 +1,39 @@
+<form #myForm="ngForm" class="container mt-5 pt-5">
+    <h2 style="margin-bottom: 50px; margin-top: 5px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(2, 100, 107);"><b>Izmenite unete podatke:</b></h2>
+    <div class="form-group">
+    <select #sel class="custom-select" (change)="selectItem(sel.value)">
+        <option *ngFor="let item of doktori" value="{{stringify(item)}}" >
+           {{item.id_doktora}}
+        </option>
+    </select>
+</div>
+    <div class="form-group">
+        <label for="ime">Ime pacijenta</label>
+        <input class="form-control"  type="text" name="ime" [(ngModel)]="zakazivanje.ime_pacijenta" value={{zakazivanje.ime_pacijenta}}>
+    </div>
+    <div class="form-group">
+        <label for="prezime">Prezime pacijenta</label>
+        <input class="form-control"  type="text" name="prezime" [(ngModel)]="zakazivanje.prezime_pacijenta" value={{zakazivanje.prezime_pacijenta}}>
+    </div>
+    <div class="form-group">
+        <label for="intervencija">Naziv intervencije</label>
+        <input class="form-control"  type="text" name="intervencija" [(ngModel)]="zakazivanje.naziv" value={{zakazivanje.naziv}}>
+    </div>
+    <div class="form-group">
+        <label for="datum">Datum termina</label>
+        <input class="form-control"  type="text" name="datum" [(ngModel)]="zakazivanje.datum" value={{zakazivanje.datum}}>
+    </div>
+    <div class="form-group">
+        <label for="vreme">Vreme termina</label>
+        <input class="form-control"  type="text" name="vreme" [(ngModel)]="zakazivanje.vreme" value={{zakazivanje.vreme}}>
+    </div>
+    <div class="form-group">
+        <label for="telefon">Kontakt telefon</label>
+        <input class="form-control"  type="text" name="telefon" [(ngModel)]="zakazivanje.telefon" value={{zakazivanje.telefon}}>
+    </div>
+    <div class="col button-holder d-flex justify-content-center align-items-center mt-4" style="margin-bottom: 100px;">
+        <input (click)="updateZakazivanje(zakazivanje)" [routerLink]="['/pocetna']" type="submit"  class="btn btn-outline-info" value="Sačuvaj izmene">
+    </div>
+</form>
+
+

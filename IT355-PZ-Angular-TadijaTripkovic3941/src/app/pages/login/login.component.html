@@ -1,0 +1,20 @@
+
+<form [formGroup]="loginForma" (ngSubmit)="logIn()" style="margin-left: 200px; margin-right: 200px; margin-bottom: 30px; margin-top: 50px;">
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(5, 126, 134);">Dobrodošli!</h1>
+<h2 style="margin-bottom: 50px; margin-top: 5px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(4, 94, 100);">Ulogujte se na sistem:</h2>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Korisničko ime</label>
+      <input type="email" class="form-control" id="username"
+      formControlName="username" name="username">
+      <small id="emailHelp" class="form-text text-muted">Unesite Vaše korisničko ime</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Lozinka</label>
+      <input type="password" class="form-control" id="password"
+      formControlName="password" name="password">
+      <small id="emailHelp" class="form-text text-muted">Unesite Vašu lozinku</small>
+    </div>
+     <div style="margin-bottom: 14px;">Nemaš kreiran nalog? <a [routerLink]="['/registracija']" class="btn btn-link">Registruj se</a></div>
+    <button type="submit" class="btn btn-outline-info" >Uloguj se</button>
+
+  </form>
